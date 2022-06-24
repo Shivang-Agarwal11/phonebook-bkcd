@@ -28,6 +28,7 @@ app.get('/contact',(req,res)=>{
 
     })
 })
+// search for user
 app.get('/contactsearch',(req,res)=>{
     const lastName=req.query.q
     Contact.find({lastName}).then((contacts)=>{
