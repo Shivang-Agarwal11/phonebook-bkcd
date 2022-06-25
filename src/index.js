@@ -4,12 +4,12 @@ const res = require('express/lib/response')
 require('./db/mongoose')
 
 var cors = require('cors');
-app.use(cors());
 const Contact=require('./models/contacts')
 
 const app=express()
 const port=process.env.PORT 
 
+app.use(cors());
 app.use(express.json())
 
 app.post('/contact',(req,res)=>{
