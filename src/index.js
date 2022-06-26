@@ -55,8 +55,8 @@ app.patch('/contact',async (req,res)=>{
         res.status(200).send(contact)
 })
 
-app.delete('/contact',(req,res)=>{
-    Contact.findOne({_id:req.body._id}).then((contact)=>{contact.remove()
+app.delete('/contact/:id',(req,res)=>{
+    Contact.findOne({_id:req.params.id}).then((contact)=>{contact.remove()
     return res.send(200)
     }
     ).catch((e)=>{
