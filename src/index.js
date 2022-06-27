@@ -41,9 +41,9 @@ app.get('/contactsearch',(req,res)=>{
 })
 
 
-app.patch('/contact',async (req,res)=>{
+app.patch('/contact/:id',async (req,res)=>{
     const updatedContact=req.body
-        const contact=await Contact.findOne({_id:updatedContact._id})
+        const contact=await Contact.findOne({_id:req.params._id})
         if(!contact){
             return res.status(404).send();
         }
